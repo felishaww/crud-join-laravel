@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/company-staff', 'CompanyController@getStaffData');
+Route::get('/company-staff-event', 'CompanyController@getStaffAndEventData');

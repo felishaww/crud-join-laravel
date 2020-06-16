@@ -23,6 +23,16 @@ class CompanyController extends Controller
             'data' => $companyStaff
         ]);
      }
+     public function getStaffAndEventData(){
+        $staffAndEvent = DB::table('companies')
+                       ->join('staff', 'companies.id', '=', 'staff.company_id')
+                       ->join('events', 'events.id', '=', 'companies.event_id')
+                       ->select('staff_name', 'staff_job', 'company_name', 'event_name', 'event_date')
+                       ->get();
+       return response()->json([
+           'data' => $staffAndEvent
+       ]);
+    }
     public function index()
     {
         //
