@@ -23,3 +23,6 @@ Route::get('/company-staff-event', 'CompanyController@getStaffAndEventData');
 Route::resource('/event', 'EventController');
 Route::get('/company', 'CompanyController@index');
 Route::get('/staff', 'StaffController@index');
+
+Route::post('/login', 'AuthController@login');
+Route::post('/register', 'AuthController@register');
